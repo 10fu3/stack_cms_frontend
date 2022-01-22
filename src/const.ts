@@ -1,1 +1,1 @@
-export const API_LOC = "http://localhost:8080/api/v1/"
+export const API_LOC = "https://stack-cms.herokuapp.com/api/v1/"
