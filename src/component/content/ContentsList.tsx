@@ -138,7 +138,7 @@ const ContentsList = ()=>{
                                     }}
                                     style={{
                                         width:"100%",
-                                        cursor:"pointer"
+                                        cursor:"pointer",
                                     }}>
                                     {
                                         <th style={{
@@ -149,7 +149,7 @@ const ContentsList = ()=>{
                                             borderBottom: "1px solid #e7e7e7",
                                             borderLeft: "1px solid #e7e7e7",
                                             borderRight: "0px",
-                                            borderWidth: 1
+                                            borderWidth: 1,
                                         }}>
                                             <Center>
                                                 <Box pl={3} borderLeft={`5px solid ${e["published_at"] ? "#008a74" : "#0087ff"}`}>
@@ -185,16 +185,15 @@ const ContentsList = ()=>{
                                                 {
                                                     (typeof e[i.field_name]) === "object" ? (()=>{
                                                         const r = (e[i.field_name] as ContentMeta[])
-                                                        console.log(r)
                                                         if(r && r.length > 0){
-                                                            return <ul>
+                                                            return <ul style={{maxHeight:"100px"}}>
                                                                 {
                                                                     r.map(i=> i && i._id ? <li>{i._id}</li> : <Box/>)
                                                                 }
                                                             </ul>
                                                         }
                                                         return ""
-                                                    })() : <Box><chakra.p fontWeight="">{e[i.field_name]}</chakra.p></Box>
+                                                    })() : <Box><chakra.p style={{maxHeight:"100px"}} fontWeight="">{e[i.field_name]}</chakra.p></Box>
                                                 }
                                             </chakra.th>
                                         })
